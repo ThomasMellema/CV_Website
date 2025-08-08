@@ -1,0 +1,12 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Project 1",
+      "description": "Description of project 1",
+      "image": "/images/project1.png",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "link": "#"
+    }
+  ]
+} 
