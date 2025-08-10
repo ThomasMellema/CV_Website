@@ -27,6 +27,16 @@ jobs:
         run: npm ci || npm install
       - name: Build site
         run: npm run build
+      - name: List built files
+        run: |
+          echo "=== dist tree ==="
+          ls -la dist
+          echo "=== dist/public ==="
+          ls -la dist/public || true
+          echo "=== dist/public/css ==="
+          ls -la dist/public/css || true
+          echo "=== dist/public/images ==="
+          ls -la dist/public/images || true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
