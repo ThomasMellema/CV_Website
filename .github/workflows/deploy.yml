@@ -29,6 +29,11 @@ jobs:
         run: npm run build
       - name: List built files
         run: |
+          echo "=== Source files ==="
+          echo "HTML files in src:"
+          ls -la src/*.html
+          echo "CV file:"
+          ls -la cv.pdf || echo "CV file not found"
           echo "=== dist tree ==="
           ls -la dist
           echo "=== dist/public ==="
