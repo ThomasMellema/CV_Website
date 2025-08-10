@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build:css": "tailwindcss -i ./src/css/styles.css -o ./dist/public/css/styles.css --minify",
-    "build:assets": "mkdir -p dist/public/images && cp -r public/images dist/public/ || true",
-    "build:html": "cp *.html dist/",
-    "build": "rm -rf dist && npm run build:css && npm run build:assets && npm run build:html",
+    "build:assets": "mkdir -p dist/public && cp -r public/images dist/public/ 2>/dev/null || true",
+    "build:static": "test -f cv.pdf && cp cv.pdf dist/ || true",
+    "build:html": "mkdir -p dist && cp -t dist ./*.html 2>/dev/null || true",
+    "build": "rm -rf dist && npm run build:css && npm run build:assets && npm run build:static && npm run build:html",
     "dev": "tailwindcss -i ./src/css/styles.css -o ./public/css/styles.css --watch"
-    },
+  },
   "keywords": [
     "cv",
     "portfolio",
