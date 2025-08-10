@@ -4,9 +4,12 @@
   "description": "Personal CV website",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./src/css/styles.css -o ./public/css/styles.css --watch",
+    "build:css": "tailwindcss -i ./src/css/styles.css -o ./dist/public/css/styles.css --minify",
+    "build:assets": "mkdir -p dist/public/images && cp -r public/images dist/public/ || true",
+    "build:html": "cp *.html dist/",
+    "build": "rm -rf dist && npm run build:css && npm run build:assets && npm run build:html",
     "dev": "tailwindcss -i ./src/css/styles.css -o ./public/css/styles.css --watch"
-  },
+    },
   "keywords": [
     "cv",
     "portfolio",
